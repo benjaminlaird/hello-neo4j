@@ -32,4 +32,4 @@ MATCH (c {name: "Slack Technologies"}) CREATE (p:Person {name:"Cal Henderson" })
 $ MATCH (a {name: "Stewart Butterfield"}) - [r] -> (c {name: "Slack Technologies"}) set r.role = "CEO"
 ```
 
-![image](https://user-images.githubusercontent.com/2372344/57548505-171dd900-732f-11e9-8fa6-53cb0a33cb31.png)
+![image](https://user-images.githubusercontent.com/2372344/57548693-9c08f280-732f-11e9-837c-c3d6c19da33e.png)
