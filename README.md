@@ -20,3 +20,16 @@ $ match (c:Company) return c
 ```
 match (n:Company {Name: "Slack Technologies"}) Delete n
 ```
+
+# Add `Person`->`Company` relationship
+```
+MATCH (c {name: "Slack Technologies"}) CREATE (p:Person {name:"Cal Henderson" }) - [rel:WORKS_AT {role:"CTO"}] -> (c)
+```
+
+# Add `role` to the Person->Company relationship
+
+```
+$ MATCH (a {name: "Stewart Butterfield"}) - [r] -> (c {name: "Slack Technologies"}) set r.role = "CEO"
+```
+
+![image](https://user-images.githubusercontent.com/2372344/57548505-171dd900-732f-11e9-8fa6-53cb0a33cb31.png)
