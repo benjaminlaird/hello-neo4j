@@ -43,3 +43,31 @@ MATCH (c {name: "Slack Technologies"}) - [r*1..3] - (p) return r,c,p
 ```
 ![image](https://user-images.githubusercontent.com/2372344/57549947-e2ac1c00-7332-11e9-9c32-bd17979ff251.png)
 
+
+#### Python Querying
+
+```
+from neo4j import GraphDatabase
+driver = GraphDatabase.driver("bolt://localhost:7687", auth=("neo4j", "XXX"))
+def print_company(tx, name):
+    for record in tx.run("MATCH (c {name: $company})-[r*1..3]-(p) return p", company=name):
+        print(record)
+   
+
+with driver.session() as session:
+    session.read_transaction(print_company, "Slack Technologies")
+
+
+<Record p=<Node id=40 labels={'Person'} properties={'name': 'Stewart Butterfield'}>>
+<Record p=<Node id=0 labels={'Person'} properties={'name': 'Cal Henderson'}>>
+<Record p=<Node id=78 labels={'Person'} properties={'name': 'Allen Shim'}>>
+<Record p=<Node id=79 labels={'Person'} properties={'name': 'Tamar Yehoshua'}>>
+<Record p=<Node id=80 labels={'Person'} properties={'name': 'Terry Anderson'}>>
+<Record p=<Node id=42 labels={'Person'} properties={'name': 'Robert Frati'}>>
+<Record p=<Node id=21 labels={'Person'} properties={'name': 'Robby Kwok'}>>
+<Record p=<Node id=20 labels={'Person'} properties={'name': 'Allan Leinwand'}>>
+<Record p=<Node id=22 labels={'Person'} properties={'name': 'David Schellhase'}>>
+<Record p=<Node id=23 labels={'Person'} properties={'name': 'Geoff Belknap'}>>
+<Record p=<Node id=60 labels={'Person'} properties={'name': 'Andrew Braccia'}>>
+<Record p=<Node id=61 labels={'Company'} properties={'name': 'Accel'}>>
+```
