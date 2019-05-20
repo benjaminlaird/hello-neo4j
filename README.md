@@ -75,3 +75,4 @@ with driver.session() as session:
 # Enron Email Visualization
 ![image](https://user-images.githubusercontent.com/2372344/58035658-3ff45a00-7af7-11e9-87d5-044f71e5bbdf.png)
 
+![image](https://user-images.githubusercontent.com/2372344/58046908-a471e200-7b14-11e9-875f-34ccb83aea85.png)
