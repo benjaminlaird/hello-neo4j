@@ -71,3 +71,7 @@ with driver.session() as session:
 <Record p=<Node id=60 labels={'Person'} properties={'name': 'Andrew Braccia'}>>
 <Record p=<Node id=61 labels={'Company'} properties={'name': 'Accel'}>>
 ```
+
+# Enron Email Visualization
+![image](https://user-images.githubusercontent.com/2372344/58035658-3ff45a00-7af7-11e9-87d5-044f71e5bbdf.png)
+
